@@ -27,7 +27,7 @@ void buzz_state_adv1(){
   static int b_state = 0;
   switch(b_state){
   case 0: buzzer_set_period(3000); break;
-  case 1: buzzer_set_period(2000); break;
+  case 1: buzzer_set_period(10); break;
   case 3: buzzer_set_period(5000); break;
   case 4: buzzer_set_period(890); break;
     //default: b_state = 0;
@@ -41,10 +41,10 @@ void buzz_state_adv1(){
 void buzz_state_adv2(){
   static int b_state = 0;
   switch(b_state){
-  case 0: buzzer_set_period(10); break;
+  case 0: buzzer_set_period(8000); break;
   case 1: buzzer_set_period(8000); break;
-  case 3: buzzer_set_period(6000); break;
-  case 4: buzzer_set_period(7800); break;
+  case 3: buzzer_set_period(1000); break;
+  case 4: buzzer_set_period(50); break;
     //default: b_state = 0;
   }
   b_state++;

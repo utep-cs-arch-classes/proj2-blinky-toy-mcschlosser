@@ -24,7 +24,7 @@ void led_update()
     P1OUT |= ledFlags;		     // set bit for on leds
     led_changed = 0;
   }
-   if (switch_state_changed) {
+  if (switch_state_changed) {
     char ledFlags = 0; /* by default, no LEDs on */
 
     ledFlags |= switch_state_down ? LED_GREEN : 0;

@@ -1,0 +1,72 @@
+Welcome to the Emacs shell
+
+~/proj2-blinky-toy-mcschlosser/project $ make
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o blinkMain.o blinkMain.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o stateMachines.o stateMachines.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o led.o led.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o buzzer.o buzzer.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o switches.o switches.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o p1_interrupt_handler.o p1_interrupt_handler.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o wdInterruptHandler.o wdInterruptHandler.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h -L/opt/ti/msp430_gcc/include -o blink.elf blinkMain.o stateMachines.o led.o buzzer.o switches.o p1_interrupt_handler.o wdInterruptHandler.o ../demos/lib/libTimer.a
+~/proj2-blinky-toy-mcschlosser/project $ make load
+msp430loader.sh blink.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  blink.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f blink.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 1544 bytes. RAM usage is 0 bytes.
+~/proj2-blinky-toy-mcschlosser/project $ make 
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o buzzer.o buzzer.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h -L/opt/ti/msp430_gcc/include -o blink.elf blinkMain.o stateMachines.o led.o buzzer.o switches.o p1_interrupt_handler.o wdInterruptHandler.o ../demos/lib/libTimer.a
+~/proj2-blinky-toy-mcschlosser/project $ make load
+msp430loader.sh blink.elf
+check 
+No valid msp430 devices found! Are you sure the MSP430 is connected to the vm (check lsusb)? 
+make: *** [Makefile:18: load] Error 1
+~/proj2-blinky-toy-mcschlosser/project $ make load
+msp430loader.sh blink.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  blink.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f blink.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 1544 bytes. RAM usage is 0 bytes.
+~/proj2-blinky-toy-mcschlosser/project $ make
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o led.o led.c
+led.c: In function 'led_update':
+led.c:27:7: error: expected '(' before 'else'
+    if else (switch_state_changed) {
+       ^~~~
+       (
+make: *** [<builtin>: led.o] Error 1
+~/proj2-blinky-toy-mcschlosser/project $ make load
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o led.o led.c
+led.c: In function 'led_update':
+led.c:27:7: error: expected '(' before 'else'
+    if else (switch_state_changed) {
+       ^~~~
+       (
+make: *** [<builtin>: led.o] Error 1
+~/proj2-blinky-toy-mcschlosser/project $ make
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h   -c -o led.o led.c
+msp430-elf-gcc -mmcu=msp430g2553 -I../demos/h -L/opt/ti/msp430_gcc/include -o blink.elf blinkMain.o stateMachines.o led.o buzzer.o switches.o p1_interrupt_handler.o wdInterruptHandler.o ../demos/lib/libTimer.a
+~/proj2-blinky-toy-mcschlosser/project $ make load
+msp430loader.sh blink.elf
+check 
+Detected msp430 dev kit
+/opt/ti/uniflash/dslite.sh --config /opt/ti/uniflash/MSP430G2553.ccxml -f  blink.elf
+Executing the following command:
+> /opt/ti/uniflash_5.1.0/deskdb/content/TICloudAgent/linux/ccs_base/DebugServer/bin/DSLite flash --config /opt/ti/uniflash/MSP430G2553.ccxml -f blink.elf
+
+For more details and examples, please refer to the UniFlash Quick Start guide.
+
+info: MSP430:  Flash/FRAM usage is 1548 bytes. RAM usage is 0 bytes.
+~/proj2-blinky-toy-mcschlosser/project $ 

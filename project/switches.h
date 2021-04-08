@@ -5,7 +5,7 @@
 #define SW2 BIT2
 #define SW3 BIT1
 #define SW4 BIT0
-#define SWITCHES (BIT3 | BIT2 | BIT1 | BIT0)            /* only 1 switch on this board */
+#define SWITCHES (SW4 | SW3 | SW2 | SW1)            /* only 1 switch on this board */
 
 void switch_init();
 void switch_interrupt_handler();
