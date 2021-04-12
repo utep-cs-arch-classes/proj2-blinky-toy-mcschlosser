@@ -36,8 +36,10 @@ void buzz_state_adv1(){
   }
   b_state++;
   if(b_state == 4){
-    buzz_state_adv2();
+    //  buzz_state_adv2();
+    b_state = 0;
   }
+  
 }
    
 void buzz_state_adv2(){
@@ -51,11 +53,34 @@ void buzz_state_adv2(){
   }
   b_state++;
   if(b_state == 4){
-    // b_state = 0;
-    buzz_state_adv1();
+     b_state = 0;
+    // buzz_state_adv1();
   }
 }
-  
+void buzz_state_adv3(){
+  static int b_state = 0;
+  switch(b_state){
+  case 0: buzzer_set_period(5); break;
+  case 1: buzzer_set_period(10); break;
+  case 2: buzzer_set_period(5); break;
+  }
+  b_state++;
+  if(b_state == 2){
+    b_state = 0;
+  }
+}
+void buzz_state_adv4(){
+  static int b_state = 0;
+  switch(b_state){
+  case 0: buzzer_set_period(500); break;
+  case 1: buzzer_set_period(0); break;
+  }
+  b_state++;
+  if(b_state == 1){
+    b_state = 0;
+  }
+}
+/*
 void buzz_state_adv(){
   if(switch_state_down){
     buzz_state_adv1();
@@ -77,7 +102,7 @@ void buzz_state_adv(){
   //  buzzer_set_period(0);
   //}
 }
-					   
+*/					   
 
     
     

@@ -85,3 +85,24 @@ void state_advance3(){
   led_changed = 1;
   led_update();
 }
+void buzz_state_adv(){
+  if(switch_state_down){
+    buzz_state_adv1();
+    state_advance();
+  }
+  else if(switch_state_down1){
+    buzz_state_adv2();
+    state_advance1();
+  }
+  else if(switch_state_down2){
+    buzz_state_adv3();
+    state_advance2();
+  }
+  else if(switch_state_down3){
+    buzz_state_adv4();
+    state_advance3();
+  }
+   else{
+    buzzer_set_period(0);
+  }
+}
