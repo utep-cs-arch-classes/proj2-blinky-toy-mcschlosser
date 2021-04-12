@@ -1,3 +1,4 @@
+
 #include <msp430.h>
 #include "libTimer.h"
 #include "buzzer.h"
@@ -50,8 +51,8 @@ void buzz_state_adv2(){
   }
   b_state++;
   if(b_state == 4){
-     b_state = 0;
-    //buzz_state_adv1();
+    // b_state = 0;
+    buzz_state_adv1();
   }
 }
   
@@ -72,9 +73,9 @@ void buzz_state_adv(){
     buzz_state_adv1();
     state_advance3();
   }
-  else{
-    buzzer_set_period(0);
-  }
+  // else{
+  //  buzzer_set_period(0);
+  //}
 }
 					   
 

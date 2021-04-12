@@ -52,7 +52,7 @@ void state_advance1(){
   case 0:
     red_on = 0;
     green_on = 1; //turns green on
-    state += 1;
+    state++;
     break;
   }
   led_changed = 1;
@@ -67,7 +67,7 @@ void state_advance2(){
   case 0:
     red_on = 1; //turns red light on
     green_on = 0;
-    state += 1;
+    state++;
     break;
   }
   led_changed = 1;
@@ -79,7 +79,7 @@ void state_advance3(){
   switch(state){
   case 0: red_on = 0;
     green_on = 0;
-    state += 1;
+    state++;
     break;
   }
   led_changed = 1;
